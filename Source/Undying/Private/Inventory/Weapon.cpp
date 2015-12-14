@@ -3,7 +3,7 @@
 #include "Undying.h"
 #include "Weapon.h"
 
-#include "UndyingPlayer.h"
+#include "UndyingCharacter.h"
 
 AWeapon::AWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
@@ -67,7 +67,7 @@ void AWeapon::Fire()
 	}
 }
 
-void AWeapon::SetOwningPawn( AUndyingPlayer *NewOwner )
+void AWeapon::SetOwningPawn( AUndyingCharacter *NewOwner )
 {
 	if( MyPawn != NewOwner )
 	{

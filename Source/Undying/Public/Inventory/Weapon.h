@@ -7,7 +7,7 @@
 #include "GameFramework/Actor.h"
 #include "Weapon.generated.h"
 
-class AUndyingPlayer;
+class AUndyingCharacter;
 
 #define TRACE_WEAPON ECC_GameTraceChannel1
 
@@ -108,7 +108,7 @@ class UNDYING_API AWeapon : public AActor
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Config)
 	int32 CurrentClip;
 
-	void SetOwningPawn(AUndyingPlayer *NewOwner);
+	void SetOwningPawn(AUndyingCharacter *NewOwner);
 
 	void AttachToPlayer();
 	void DetachFromPlayer();
@@ -128,7 +128,7 @@ protected:
 
 	void SpawnImpactEffects( const FHitResult& Impact );
 
-	AUndyingPlayer *MyPawn;
+	AUndyingCharacter *MyPawn;
 
 	virtual FVector GetAdjustedAim() const;
 };
