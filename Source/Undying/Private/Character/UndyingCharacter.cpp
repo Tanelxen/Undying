@@ -42,48 +42,44 @@ void AUndyingCharacter::BeginPlay()
 
 void AUndyingCharacter::MoveForward( float Value )
 {
-	if ( (Controller != NULL) && (Value != 0.0f) )
+	if( Value != 0.0f )
 	{
-
-		const FRotator Rotation = Controller->GetControlRotation();
+		const FRotator Rotation = GetControlRotation();
 		const FRotator YawRotation( 0, Rotation.Yaw, 0 );
 
-		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-		AddMovementInput( Direction, Value );
+		AddMovementInput( FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X), Value );
 	}
 }
 
 void AUndyingCharacter::MoveRight( float Value )
 {
-	if ( (Controller != NULL) && (Value != 0.0f) )
+	if( Value != 0.0f )
 	{
-		const FRotator Rotation = Controller->GetControlRotation();
-		const FRotator YawRotation( 0, Rotation.Yaw, 0 );
-	
-		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		const FRotator Rotation = GetControlRotation();
+		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
-		AddMovementInput( Direction, Value );
+		AddMovementInput( FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y), Value );
 	}
 }
 
 
-void AUndyingCharacter::SetupPlayerInputComponent(class UInputComponent* InputComponent)
-{
-	check(InputComponent);
-
-	InputComponent->BindAxis( "Turn", this, &APawn::AddControllerYawInput );
-	InputComponent->BindAxis( "LookUp", this, &APawn::AddControllerPitchInput );
-
-	InputComponent->BindAxis( "MoveForward", this, &AUndyingCharacter::MoveForward );
-	InputComponent->BindAxis( "MoveRight", this, &AUndyingCharacter::MoveRight );
-	InputComponent->BindAction( "Jump", IE_Pressed, this, &ACharacter::Jump );
-
-	InputComponent->BindAction( "Fire", IE_Pressed, this, &AUndyingCharacter::FireWeapon );
-	InputComponent->BindAction( "NextWeapon", IE_Pressed, this, &AUndyingCharacter::NextWeapon );
-	InputComponent->BindAction( "PrevWeapon", IE_Pressed, this, &AUndyingCharacter::PrevWeapon );
-
-	InputComponent->BindAction( "PrintActors", IE_Pressed, this, &AUndyingCharacter::PrintActors );
-}
+//void AUndyingCharacter::SetupPlayerInputComponent(class UInputComponent* InputComponent)
+//{
+//	check(InputComponent);
+//
+//	InputComponent->BindAxis( "Turn", this, &APawn::AddControllerYawInput );
+//	InputComponent->BindAxis( "LookUp", this, &APawn::AddControllerPitchInput );
+//
+//	InputComponent->BindAxis( "MoveForward", this, &AUndyingCharacter::MoveForward );
+//	InputComponent->BindAxis( "MoveRight", this, &AUndyingCharacter::MoveRight );
+//	InputComponent->BindAction( "Jump", IE_Pressed, this, &ACharacter::Jump );
+//
+//	InputComponent->BindAction( "Fire", IE_Pressed, this, &AUndyingCharacter::FireWeapon );
+//	InputComponent->BindAction( "NextWeapon", IE_Pressed, this, &AUndyingCharacter::NextWeapon );
+//	InputComponent->BindAction( "PrevWeapon", IE_Pressed, this, &AUndyingCharacter::PrevWeapon );
+//
+//	InputComponent->BindAction( "PrintActors", IE_Pressed, this, &AUndyingCharacter::PrintActors );
+//}
 
 void AUndyingCharacter::GiveDefaultWeapon()
 {

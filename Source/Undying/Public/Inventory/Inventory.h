@@ -5,13 +5,13 @@
 #include "GameFramework/Actor.h"
 #include "Inventory.generated.h"
 
-
 UCLASS( abstract )
 class UNDYING_API AInventory : public AActor
 {
 	GENERATED_BODY()
-
-public:
+	
+public:	
+	//AInventory();
 
 	/** name displayed on the HUD*/
 	UPROPERTY( EditDefaultsOnly, Category = "HUD" )

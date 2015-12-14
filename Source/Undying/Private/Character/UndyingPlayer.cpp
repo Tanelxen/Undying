@@ -87,14 +87,14 @@ void AUndyingPlayer::SetupPlayerInputComponent(class UInputComponent* InputCompo
 
 void AUndyingPlayer::GiveDefaultWeapon()
 {
-	AWeapon *Spawner = GetWorld()->SpawnActor<AWeapon>( WeaponSpawn );
+	//AWeapon *Spawner = GetWorld()->SpawnActor<AWeapon>( WeaponSpawn );
 
-	if( Spawner )
-	{
-		CurrentWeapon = Spawner;
-		CurrentWeapon->SetOwningPawn( this );
-		CurrentWeapon->OnEquip();
-	}
+	//if( Spawner )
+	//{
+	//	CurrentWeapon = Spawner;
+	//	CurrentWeapon->SetOwningPawn( this );
+	//	CurrentWeapon->OnEquip();
+	//}
 }
 
 void AUndyingPlayer::FireWeapon()
@@ -115,20 +115,20 @@ void AUndyingPlayer::PrevWeapon()
 
 void AUndyingPlayer::EquipWeapon( AWeapon *Weapon )
 {
-	if( CurrentWeapon != NULL )
-	{
-		CurrentWeapon->OnUnEquip();
+	//if( CurrentWeapon != NULL )
+	//{
+	//	CurrentWeapon->OnUnEquip();
 
-		CurrentWeapon = Weapon;
-		Weapon->SetOwningPawn( this );
-		Weapon->OnEquip();
-	}
-	else
-	{
-		CurrentWeapon = Weapon;
-		CurrentWeapon->SetOwningPawn( this );
-		Weapon->OnEquip();
-	}
+	//	CurrentWeapon = Weapon;
+	//	Weapon->SetOwningPawn( this );
+	//	Weapon->OnEquip();
+	//}
+	//else
+	//{
+	//	CurrentWeapon = Weapon;
+	//	CurrentWeapon->SetOwningPawn( this );
+	//	Weapon->OnEquip();
+	//}
 }
 
 void AUndyingPlayer::OnCollision( AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult )

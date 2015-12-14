@@ -2,39 +2,34 @@
 
 #pragma once
 
-#include "GameFramework/Actor.h"
+#include "Inventory/Inventory.h"
 #include "Pickup.generated.h"
 
-
+/**
+ * 
+ */
 UCLASS( abstract )
 class UNDYING_API APickup : public AInventory
 {
 	GENERATED_BODY()
 
 public:
-
+	APickup();
+	
 	UPROPERTY( EditDefaultsOnly, Category = "Pickup" )
 	bool bCanHaveMultipleCopies;
 
 	UPROPERTY( EditDefaultsOnly, Category = "Pickup" )
 	bool bCanActivate;
 
-	bool HandlePickupQuery( APickup Item )
-	{
-		if( Item->IsA( this::StaticClass() ) )
-		{
-			if( bCanHaveMultipleCopies )
-			{
-				NumCopies++;
-			}
+	UPROPERTY( VisibleAnywhere, BlueprintReadOnly, Category = "Pickup" )
+	UBoxComponent *CollisionComp;
 
-			return true;
-		}
+	UPROPERTY( EditDefaultsOnly, Category = "Pickup" )
+	class UStaticMeshComponent* PickupMesh;
 
-		return false;
-	}
+	bool HandlePickupQuery( APickup* Item );
 
-protected:
 
-	int NumCopies;
+	int32 NumCopies;
 };

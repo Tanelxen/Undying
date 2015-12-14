@@ -2,10 +2,12 @@
 
 #pragma once
 
-#include "GameFramework/Actor.h"
+#include "Inventory/Pickup.h"
 #include "Ammo.generated.h"
 
-
+/**
+ * 
+ */
 UCLASS( abstract )
 class UNDYING_API AAmmo : public APickup
 {
@@ -14,43 +16,14 @@ class UNDYING_API AAmmo : public APickup
 public:
 
 	UPROPERTY( EditDefaultsOnly, Category = "Ammo" )
-	int AmmoAmount;
+	int32 AmmoAmount;
 
 	UPROPERTY( EditDefaultsOnly, Category = "Ammo" )
-	int MaxAmount;
+	int32 MaxAmount;
 
-	bool HandlePickupQuery( APickup Item ) override
-	{
-		if( Item->IsA( this::StaticClass() ) )
-		{
-			AddAmmo( AAmmo(Item).AmmoAmount );
+	bool HandlePickupQuery( APickup* Item );
 
-			return true;
-		}
+	bool AddAmmo( int AmmoToAdd );
 
-		return false;
-	}
-
-	bool AddAmmo( int AmmoToAdd )
-	{
-		if( AmmoAmount >= MaxAmmo ) return false;
-
-		AmmoAmount += AmmoToAdd;
-
-		if( AmmoAmount > MaxAmmo )
-		{
-			AmmoAmount = MaxAmmo;
-		}
-
-		return true;
-	}
-
-	bool UseAmmo( int AmountNeeded )
-	{
-		if( AmmoAmount < AmountNeeded ) return false;
-
-		AmmoAmount -= AmountNeeded;
-
-		return true;
-	}
+	bool UseAmmo( int AmountNeeded );
 };

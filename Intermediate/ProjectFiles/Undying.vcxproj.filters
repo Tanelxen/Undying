@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\Undying.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{C9F87B2D-ADDA-4200-85C2-5953C86880B6}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Undying.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\UndyingEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{8FC591F5-D993-43DB-88D5-A3BA873DD916}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\Undying">
+			<UniqueIdentifier>{517DE925-1E7C-436B-AF2C-4055E738912E}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Undying\Undying.Build.cs">
+			<Filter>Source\Undying</Filter>
+		</None >
+		<Filter Include="Source\Undying\Private">
+			<UniqueIdentifier>{DF4D7FEB-144E-4AB6-B932-268CCE40D24D}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\Undying\Private\Undying.cpp">
+			<Filter>Source\Undying\Private</Filter>
+		</ClCompile >
+		<Filter Include="Source\Undying\Private\Character">
+			<UniqueIdentifier>{2F4B1232-295A-48B4-B31A-4A77D3B35906}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\Undying\Private\Character\UndyingCharacter.cpp">
+			<Filter>Source\Undying\Private\Character</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\Undying\Private\Character\UndyingPlayer.cpp">
+			<Filter>Source\Undying\Private\Character</Filter>
+		</ClCompile >
+		<Filter Include="Source\Undying\Private\Inventory">
+			<UniqueIdentifier>{483A6D9C-A47D-4970-8759-26B1E510B2A4}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\Undying\Private\Inventory\ImpactEffect.cpp">
+			<Filter>Source\Undying\Private\Inventory</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\Undying\Private\Inventory\Inventory.cpp">
+			<Filter>Source\Undying\Private\Inventory</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\Undying\Private\Inventory\Weapon.cpp">
+			<Filter>Source\Undying\Private\Inventory</Filter>
+		</ClCompile >
+		<Filter Include="Source\Undying\Public">
+			<UniqueIdentifier>{98174E15-8E1B-4CEE-9709-C83F33BF3C61}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\Source\Undying\Public\Undying.h">
+			<Filter>Source\Undying\Public</Filter>
+		</ClInclude >
+		<Filter Include="Source\Undying\Public\Character">
+			<UniqueIdentifier>{2A835E55-CB5F-47FE-9110-509E648583A8}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\Source\Undying\Public\Character\UndyingCharacter.h">
+			<Filter>Source\Undying\Public\Character</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\Undying\Public\Character\UndyingPlayer.h">
+			<Filter>Source\Undying\Public\Character</Filter>
+		</ClInclude >
+		<Filter Include="Source\Undying\Public\Inventory">
+			<UniqueIdentifier>{3F03CE0F-1495-49AC-9BED-651BBA5BA70D}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\Source\Undying\Public\Inventory\ImpactEffect.h">
+			<Filter>Source\Undying\Public\Inventory</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\Undying\Public\Inventory\Inventory.h">
+			<Filter>Source\Undying\Public\Inventory</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\Undying\Public\Inventory\Weapon.h">
+			<Filter>Source\Undying\Public\Inventory</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
